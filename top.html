@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- <div style="display: block;width: 100%;height: 68px;">
+        <header style="background-color: black;width: 100%;height: 68px;">
+            <a href="#" class="brand">Yungang Grottoes</a>
+            <div class="menu-btn"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="top.html" style="color: greenyellow;">首页</a>
+                    <a href="main.html">造像巡礼</a>
+                    <a href="example.html">文化传承与保护</a>
+                    <a href="#">Gallery</a>
+                    <a href="last.html">法规护航</a>
+                </div>
+            </div>
+        </header>
+    </div> -->
+
+    <div style="display: block;width: 100%;height: 68px;">
+        <header style="background-color: black;width: 100%;height: 68px;">
+            <a href="#" class="brand">Yungang Grottoes</a>
+            <div class="menu-btn"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="top.html" style="color: greenyellow;">首页</a>
+                    <a href="main.html">造像巡礼</a>
+                    <a href="shida_html/one.html">文化传承与保护</a>
+                    <a href="page2.html">旅游胜地</a>
+                    <a href="last2.html">法规护航</a>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <section class="home">
+        <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>云冈石窟：<br><span>历史、艺术与文化传承</span></h1>
+            <p>项目简介：作品是对云冈石窟深入探索与解读的结晶，旨在展现云冈石窟千年历史的厚重底蕴、丰富多彩的艺术风貌以及其在文化传承中的重要地位。</p>
+            <a href="#">更多介绍</a>
+        </div>
+        <div class="content">
+            <h1>云冈石窟<br><span>数据可视化</span></h1>
+            <p>数据来源于videovo以及pixabay，均为免费使用素材，数据来源于相关数据网，不存在侵权行为。
+            </p>
+            <a href="#">更多说明</a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        //Javacript for responsive navigation menu
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        //Javacript for video slider navigation
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
